@@ -15,6 +15,10 @@ public class Meal {
 
     private String description;
 
+    public Meal() {
+        // jpa only
+    }
+
     public Meal(String name, String description) {
         this.name = name;
         this.description = description;
