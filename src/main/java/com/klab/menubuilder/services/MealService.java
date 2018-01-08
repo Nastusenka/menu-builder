@@ -24,4 +24,8 @@ public class MealService {
     public Meal getById(Long id) {
         return mealRepository.findOne(id);
     }
+
+    public Meal create(Meal meal) {
+        return mealRepository.saveAndFlush(meal);
+    }
 }
