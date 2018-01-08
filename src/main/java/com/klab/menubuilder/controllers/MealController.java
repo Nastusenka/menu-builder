@@ -3,6 +3,7 @@ package com.klab.menubuilder.controllers;
 import com.klab.menubuilder.models.Meal;
 import com.klab.menubuilder.services.MealService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,4 +25,10 @@ public class MealController {
     public List<Meal> readMeals() {
         return mealService.getAll();
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/{mealId}")
+    Meal readMealById(@PathVariable Long mealId) {
+        return this.mealService.getById(mealId);
+    }
+
 }
